@@ -28,4 +28,4 @@ npm run dev
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/schwendyjr/COMP3170-Project.git
-   cd COMP3170-Project
+
