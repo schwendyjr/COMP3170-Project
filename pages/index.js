@@ -1,18 +1,17 @@
-import Image from "next/image";
-import localFont from "next/font/local";
 import Head from 'next/head';
-import WeatherDisplay from '../components/WeatherDisplay';
+import WeatherHeader from '../components/WeatherHeader';
+import WeatherManager from '../components/WeatherManager';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Weather App</title>
+        <title>Weather 2.0</title>
       </Head>
 
-      <h1 className={styles.heading}>Weather App</h1>
-      <WeatherDisplay />
+      <WeatherHeader />
+      <WeatherManager />
     </div>
   );
 }
