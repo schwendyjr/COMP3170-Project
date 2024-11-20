@@ -1,0 +1,14 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  .item {
+    background: #f8d7da;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
