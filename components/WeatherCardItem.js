@@ -1,15 +1,20 @@
-// components/WeatherCardItem.js
-import { Card, CardContent, Typography } from '@mui/material';
-import styles from '../styles/WeatherCardItem.module.css';
+// WeatherCardListItem.js
+import PropTypes from 'prop-types';
 
-const WeatherCardItem = ({ weather }) => (
-  <Card className={styles.card}>
-    <CardContent>
-      <Typography variant="h5">{weather.location.name}</Typography>
-      <Typography>Temperature: {weather.current.temp_c} °C</Typography>
-      <Typography>Condition: {weather.current.condition.text}</Typography>
-    </CardContent>
-  </Card>
-);
+const WeatherCardListItem = ({ city, temperature, condition }) => {
+  return (
+    <div>
+      <h2>{city}</h2>
+      <p>Temperature: {temperature}°C</p>
+      <p>Condition: {condition}</p>
+    </div>
+  );
+};
 
-export default WeatherCardItem;
+WeatherCardListItem.propTypes = {
+  city: PropTypes.string.isRequired,
+  temperature: PropTypes.number.isRequired,
+  condition: PropTypes.string.isRequired,
+};
+
+export default WeatherCardListItem;
