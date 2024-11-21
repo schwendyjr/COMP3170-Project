@@ -1,10 +1,14 @@
 {
+  "homepage": "https://schwendyjr.github.io/COMP3170-Project/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
+    "export": "next export",
+    "predeploy": "npm run build && npm run export",
+    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
   },
