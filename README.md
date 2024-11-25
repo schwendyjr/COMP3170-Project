@@ -21,7 +21,7 @@ npm run dev
 ### Prerequisites
 
 - Node.js and npm installed on your machine.
-- A free Weatherstack API key. You can get one from [Weatherstack](https://weatherstack.com/).
+- A WeatherAPI.com key. You can get one from [WeatherAPI](https://www.weatherapi.com/).
 
 ### Installation
 
