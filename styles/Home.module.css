@@ -1,45 +1,106 @@
 /* styles/Home.module.css */
 .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  margin-bottom: 2rem;
+}
+
+.button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  background: #f8d7da;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.forecast-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  max-width: 1200px; /* Limits container width */
+  width: 100%; /* Ensures it takes up the full available width but doesn't stretch beyond max-width */
+  justify-content: center; /* Centers the forecast cards */
+}
+
+.forecast-card {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto; /* Prevents the card from stretching */
+}
+
+/* Scoped styles for the WeatherSearch component */
+.weatherSearchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-left:auto;
+}
+
+.weatherSearchContainer input {
+  padding: 0.5rem;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.weatherSearchContainer button {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weatherSearchContainer button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+/* Media Query to adjust forecast layout on smaller screens */
+@media (max-width: 768px) {
+  .forecast-container {
+    flex-direction: row; /* Stack the cards vertically on smaller screens */
     align-items: center;
-    justify-content: center;
   }
-  
-  .heading {
-    margin-bottom: 2rem;
+
+  .forecast-card {
+    min-width: 150px; /* Smaller cards on small screens */
   }
-  
-  .button {
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #005bb5;
-  }
-  
-  .list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .item {
-    background: #f8d7da;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 5px;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 1rem;
-    }
-  }
-  
+}

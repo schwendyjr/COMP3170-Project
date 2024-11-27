@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import WeatherHeader from '../components/WeatherHeader';
-import WeatherSearch from '@/components/WeatherSearch';
+import WeatherSearch from '../components/WeatherSearch';
+import Forecast from '../components/Forecast';
 import styles from '../styles/Home.module.css';
+
 
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
 
       <WeatherHeader />
       <WeatherSearch />
+      <Forecast city="Vancouver" />
     </div>
   );
 }

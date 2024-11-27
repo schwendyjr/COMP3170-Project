@@ -1,68 +1,89 @@
-// WeatherSearch.js
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import WeatherCardItem from './WeatherCardItem';
+import { Grid, Box, Button, TextField, Typography, CircularProgress } from '@mui/material';
 
 const WeatherSearch = () => {
   const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState(null);
-  const [error, setError] = useState('');
-  const [isSearching, setIsSearching] = useState(false);
+  const [state, setState] = useState({
+    weatherData: null,
+    error: null,
+    isSearching: false,
+  });
 
-  // Function to fetch weather data
   const fetchWeatherData = async (cityName) => {
     try {
-      const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${city}`);
-      if (response.data && response.data.location && response.data.current) {
-        setWeatherData(response.data);
-        setError(''); // Clear any previous error
-      } else if (isSearching) {
-        setError('City not found or data is incomplete');
+      setState({ ...state, isSearching: true, error: null });
+      const response = await axios.get(
+        `https://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${cityName}`
+      );
+      if (response.data?.location && response.data?.current) {
+        setState({
+          weatherData: response.data,
+          error: null,
+          isSearching: false,
+        });
+      } else {
+        setState({ weatherData: null, error: 'Incomplete data.', isSearching: false });
       }
-    } catch (err) {
-      if (isSearching) {
-        setError('City not found');
-      }
+    } catch (error) {
+      setState({
+        weatherData: null,
+        error: error.response?.data?.error?.message || 'City not found.',
+        isSearching: false,
+      });
     }
   };
 
-//   // Use useEffect to fetch Vancouver's weather data on component mount
-//   useEffect(() => {
-//     fetchWeatherData('Vancouver');
-//   }, []);
-
-  const handleInputChange = (e) => {
-    setCity(e.target.value);
-  };
+  const handleInputChange = (e) => setCity(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSearching(true);
-    setError('');
-    fetchWeatherData(city);
+    if (city.trim()) {
+      fetchWeatherData(city);
+    }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
+    <Box sx={{ textAlign: 'center', marginTop: 3 }}>
+      <Typography variant="h4" sx={{ marginBottom: 2 }}>
+        Weather Search
+      </Typography>
+
+      <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', justifyContent: 'center', gap: 2, marginBottom: 3 }}>
+        <TextField
+          label="Enter City"
+          variant="outlined"
           value={city}
           onChange={handleInputChange}
-          placeholder="Enter city name"
+          sx={{ width: '300px' }}
         />
-        <button type="submit">Search</button>
-      </form>
-      {error && <p>{error}</p>}
-      {weatherData && weatherData.location && weatherData.current && (
-        <WeatherCardItem
-          city={weatherData.location.name}
-          temperature={weatherData.current.temp_c}
-          condition={weatherData.current.condition.text}
-          icon={weatherData.current.condition.icon}
-        />
-      )}
-    </div>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={state.isSearching}
+          sx={{ padding: '10px 20px' }}
+        >
+          {state.isSearching ? <CircularProgress size={24} /> : 'Search'}
+        </Button>
+      </Box>
+
+      {state.error && <Typography color="error">{state.error}</Typography>}
+
+      <Grid container spacing={3} justifyContent="Center">
+        {state.weatherData && (
+          <Grid item  sm={4} lg={6} >
+            <WeatherCardItem
+              city={state.weatherData.location.name}
+              temperature={state.weatherData.current.temp_c}
+              condition={state.weatherData.current.condition.text}
+              icon={state.weatherData.current.condition.icon}
+            />
+          </Grid>
+        )}
+      </Grid>
+    </Box>
   );
 };
 

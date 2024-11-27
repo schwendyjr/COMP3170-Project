@@ -1,4 +1,3 @@
-// components/WeatherHeader.js
 import styles from '../styles/WeatherHeader.module.css';
 
 export default function WeatherHeader() {
