@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import WeatherCardItem from './WeatherCardItem';
 
-
 const WeatherSearch = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
