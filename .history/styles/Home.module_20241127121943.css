@@ -5,24 +5,6 @@
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-/* animation component */
-    background: linear-gradient(45deg, #f4e115,#F5F5DC, #223dd4);
-    background-size: 400% 400%;
-    animation: GradientBackground 20s ease infinite;      
-  }
-/* keyframe for animation */
-  @keyframes GradientBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
   }
   
   .heading {
