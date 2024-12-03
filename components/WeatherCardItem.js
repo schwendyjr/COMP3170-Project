@@ -1,23 +1,14 @@
-import PropTypes from 'prop-types';
+import { formatDate } from '../utils/formatDate';
 
-const WeatherCardItem = ({ city, temperature, condition, icon }) => {
-  const iconUrl = icon.startsWith('http') ? icon : `https:${icon}`;
-
-  return (
-    <div>
-      <h2>{city}</h2>
-      <p>Temperature: {temperature}°C</p>
-      <p>Condition: {condition}</p>
-      <img src={iconUrl} alt={condition} />
-    </div>
-  );
-};
-
-WeatherCardItem.propTypes = {
-  city: PropTypes.string.isRequired,
-  temperature: PropTypes.number.isRequired,
-  condition: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+const WeatherCardItem = ({ day }) => {
+    return (
+        <div>
+            <h3>{formatDate(day.date)}</h3>
+            <img src={day.day.condition.icon} alt={day.day.condition.text} />
+            <p>Temperature: {day.day.avgtemp_c}°C</p>
+            <p>Condition: {day.day.condition.text}</p>
+        </div>
+    );
 };
 
 export default WeatherCardItem;
