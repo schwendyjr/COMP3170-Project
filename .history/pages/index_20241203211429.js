@@ -5,15 +5,8 @@ import Image from 'next/image';
 const Home = () => {
     return (
         <div className={styles.container}>
-            <header>
-            <img 
-            src="./logo.png" 
-            alt="Logo" 
-            width={100} 
-            className={styles.logo} 
-            />
-            </header>
-            <h1 className="weatherHeader">Weather2.0</h1>
+            <img src="/public/logo.svg" alt="" className={styles.logo} />
+            <h1>Weather2.0</h1>
             <WeatherApp />
         </div>
     );
