@@ -8,7 +8,7 @@
 /* animation component */
 background: linear-gradient(45deg, 
 #151a1f, #4a69bd, /* Early morning */
-#ff6f61, /* Sunrise */
+#ff9a76, #ff6f61, /* Sunrise */
 #87ceeb, #fdfd96, /* Noon */
 #ffa500, #ffd700, /* Afternoon */
 #ff4500, #800080, /* Sunset */
@@ -16,7 +16,7 @@ background: linear-gradient(45deg,
 );
 background-size: 600% 600%;
 animation: GradientBackground 120s ease infinite;      
-animation: GradientBackground 300s ease infinite, GradientAngle 360s linear infinite;
+animation: GradientBackground 500s ease infinite, GradientAngle 560s linear infinite;
 overflow: hidden;
 position: relative;
 }
@@ -47,16 +47,7 @@ pointer-events: none;
 50% { opacity: 0.6; }
 100% { opacity: 0.8; }
 }
-
-/* logo */
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  width: 100px; /* Adjust size */
-  height: auto; /* Maintain aspect ratio */
-}
-
+  
   .heading {
     margin-bottom: 2rem;
   }
@@ -134,12 +125,15 @@ pointer-events: none;
   margin: 1rem 0;
   align-items: center;
   justify-content: center;
-  max-width: 400px;
 
-  position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  flex-direction: column; /* Stack input and button */
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px; /* Limit form width */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
 }
 
 .searchForm input {
@@ -154,17 +148,14 @@ pointer-events: none;
   width: 100%; /* Make button fill available space */
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: #a8a8a8;
+  background-color: #838383;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.3s ease;
 }
 
 .searchForm button:hover {
-  background-color: #eaeaea;
-  color: black;
-  transition: background-color 0.5s ease
+  background-color: #005bb5;
 }
-

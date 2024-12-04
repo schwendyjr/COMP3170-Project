@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div className={styles.container}>
             <img 
-            src="/public/logo.svg" 
+            src="/logo.svg" 
             alt="Logo" 
             width={100} 
             height={100} 

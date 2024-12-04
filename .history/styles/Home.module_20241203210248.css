@@ -47,16 +47,7 @@ pointer-events: none;
 50% { opacity: 0.6; }
 100% { opacity: 0.8; }
 }
-
-/* logo */
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  width: 100px; /* Adjust size */
-  height: auto; /* Maintain aspect ratio */
-}
-
+  
   .heading {
     margin-bottom: 2rem;
   }
