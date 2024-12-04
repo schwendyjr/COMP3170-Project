@@ -15,7 +15,8 @@ const Home = () => {
             </header>
             <h1 className="weatherHeader">Weather2.0</h1>
             <WeatherApp />
-            <footer style={{ position: 'fixed', bottom: '25px',width: '100%', textAlign:'center'}}> Trevor Tan ©
+            <br></br>
+            <footer style={{ bottom: '25px',width: '100%', textAlign:'center'}}> Trevor Tan ©
             , Khalil Olaes ©
             , Parker Schwendeman ©
             </footer>
