@@ -1,30 +1,52 @@
 /* styles/Home.module.css */
 .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 /* animation component */
-    background: linear-gradient(45deg, #f4e115,#F5F5DC, #223dd4);
-    background-size: 400% 400%;
-    animation: GradientBackground 20s ease infinite;      
-  }
+background: linear-gradient(45deg, 
+#151a1f, #4a69bd, /* Early morning */
+#ff9a76, #ff6f61, /* Sunrise */
+#87ceeb, #fdfd96, /* Noon */
+#ffa500, #ffd700, /* Afternoon */
+#ff4500, #800080, /* Sunset */
+#000428, #1b2735 /* Evening/Night */
+);
+background-size: 600% 600%;
+/* animation: GradientBackground 120s ease infinite;       */
+animation: GradientBackground 500s ease infinite, GradientAngle 560s linear infinite;
+overflow: hidden;
+position: relative;
+}
+
+.container:after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: radial-gradient(#ffffff88 .5px, transparent .5px);
+background-size: 3px 3px;
+opacity: 0.6;
+animation: Twinkle 2s infinite ease-in-out alternate;
+pointer-events: none;
+}
+
 /* keyframe for animation */
-  @keyframes GradientBackground {
-    0% {
-      background-position: 0% 50%;
-    }
+@keyframes GradientBackground {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
 
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
+@keyframes Twinkle {
+0% { opacity: 0.4; }
+50% { opacity: 0.6; }
+100% { opacity: 0.8; }
+}
   .heading {
     margin-bottom: 2rem;
   }
