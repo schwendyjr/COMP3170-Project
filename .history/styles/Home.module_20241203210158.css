@@ -15,7 +15,7 @@ background: linear-gradient(45deg,
 #000428, #1b2735 /* Evening/Night */
 );
 background-size: 600% 600%;
-/* animation: GradientBackground 120s ease infinite;       */
+animation: GradientBackground 120s ease infinite;      
 animation: GradientBackground 500s ease infinite, GradientAngle 560s linear infinite;
 overflow: hidden;
 position: relative;
@@ -47,6 +47,7 @@ pointer-events: none;
 50% { opacity: 0.6; }
 100% { opacity: 0.8; }
 }
+  
   .heading {
     margin-bottom: 2rem;
   }
@@ -122,8 +123,6 @@ pointer-events: none;
   display: flex;
   gap: 0.5rem;
   margin: 1rem 0;
-  margin-bottom: 3rem;
-  margin-top: 5rem;
   align-items: center;
   justify-content: center;
   max-width: 400px;
@@ -143,11 +142,11 @@ pointer-events: none;
 }
 
 .searchForm button {
-  width: 70%; /* Make button fill available space */
+  width: 100%; /* Make button fill available space */
   padding: 0.5rem;
   font-size: 1rem;
   background-color: #a8a8a8;
-  color: rgb(0, 0, 0);
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -160,8 +159,3 @@ pointer-events: none;
   transition: background-color 0.5s ease
 }
 
-.h2 {
-  display:flex;
-  justify-content: center;
-
-}

@@ -15,7 +15,7 @@ background: linear-gradient(45deg,
 #000428, #1b2735 /* Evening/Night */
 );
 background-size: 600% 600%;
-/* animation: GradientBackground 120s ease infinite;       */
+animation: GradientBackground 120s ease infinite;      
 animation: GradientBackground 500s ease infinite, GradientAngle 560s linear infinite;
 overflow: hidden;
 position: relative;
@@ -47,6 +47,7 @@ pointer-events: none;
 50% { opacity: 0.6; }
 100% { opacity: 0.8; }
 }
+  
   .heading {
     margin-bottom: 2rem;
   }
@@ -92,11 +93,11 @@ pointer-events: none;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #ffffffab;
+  background-color: #fff;
   text-align: center;
   max-width: 200px;
 }
@@ -114,54 +115,4 @@ pointer-events: none;
 .weatherCard p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
-}
-
-/* form css */
-
-.searchForm {
-  display: flex;
-  gap: 0.5rem;
-  margin: 1rem 0;
-  margin-bottom: 3rem;
-  margin-top: 5rem;
-  align-items: center;
-  justify-content: center;
-  max-width: 400px;
-
-  position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.searchForm input {
-  width: 100%; /* Make input fill available space */
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.searchForm button {
-  width: 70%; /* Make button fill available space */
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: #a8a8a8;
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-}
-
-.searchForm button:hover {
-  background-color: #eaeaea;
-  color: black;
-  transition: background-color 0.5s ease
-}
-
-.h2 {
-  display:flex;
-  justify-content: center;
-
 }
