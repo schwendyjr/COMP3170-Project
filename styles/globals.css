@@ -15,4 +15,30 @@ body {
     padding: 10px;
   }
 
+  .sidebar { display: none; }
+
+}
+
+.sidebar {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #e0e0e0;
+  padding: 10px;
+}
+.sidebar h2 {
+  font-size: 1.5em;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  cursor: pointer;
+  padding: 5px 0;
+}
+.sidebar li:hover {
+  background-color: #9b9b9b;
 }

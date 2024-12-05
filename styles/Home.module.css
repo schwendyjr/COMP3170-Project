@@ -165,3 +165,8 @@ pointer-events: none;
   justify-content: center;
 
 }
+
+.inputdiv {
+  display:flex;
+  justify-content: center;
+}
