@@ -15,6 +15,8 @@ body {
     padding: 10px;
   }
 
+  .sidebar { display: none; }
+
 }
 
 .sidebar {
@@ -38,5 +40,5 @@ body {
   padding: 5px 0;
 }
 .sidebar li:hover {
-  background-color: #ffffff;
+  background-color: #9b9b9b;
 }
